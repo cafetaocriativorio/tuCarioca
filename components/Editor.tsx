@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import type { Tool } from '../types';
 import { Toolbar } from './Toolbar';
@@ -34,7 +33,7 @@ export const Editor: React.FC<EditorProps> = ({ image, onEdit, onUndo, onReset, 
   return (
     <div className="w-full h-screen flex flex-col bg-gray-900">
       <header className="flex-shrink-0 bg-gray-800/50 p-2 flex justify-between items-center z-20">
-        <h1 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">ImageCraft AI</h1>
+        <h1 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">tuCa Editor</h1>
         <div className="flex items-center space-x-2">
             <button 
                 onClick={onUndo} 

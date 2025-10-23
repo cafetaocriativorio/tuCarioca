@@ -1,4 +1,3 @@
-
 import React, { useRef } from 'react';
 import { UploadIcon } from './icons/UploadIcon';
 
@@ -23,7 +22,7 @@ export const UploadScreen: React.FC<UploadScreenProps> = ({ onImageUpload }) => 
   return (
     <div className="text-center p-8">
       <h1 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 mb-4">
-        ImageCraft AI
+        tuCa Editor
       </h1>
       <p className="text-lg text-gray-400 mb-8 max-w-xl mx-auto">
         Transforme suas imagens com o poder da IA. De ajustes simples à manipulação complexa de objetos, dê vida à sua visão criativa.
