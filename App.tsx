@@ -17,7 +17,7 @@ const App: React.FC = () => {
 
   const handleImageUpload = (file: File) => {
     setIsLoading(true);
-    setLoadingMessage('Loading image...');
+    setLoadingMessage('Carregando imagem...');
     blobToBase64(file).then(base64 => {
       setOriginalImage(base64);
       setCurrentImage(base64);
@@ -26,7 +26,7 @@ const App: React.FC = () => {
       setLoadingMessage('');
     }).catch(err => {
         console.error(err);
-        setError('Failed to load image. Please try another file.');
+        setError('Falha ao carregar a imagem. Por favor, tente outro arquivo.');
         setIsLoading(false);
         setLoadingMessage('');
     });
@@ -48,7 +48,7 @@ const App: React.FC = () => {
       setHistory(prev => [...prev, fullImageSrc]);
     } catch (err) {
       console.error(err);
-      setError('An error occurred while editing the image. Please try again.');
+      setError('Ocorreu um erro ao editar a imagem. Por favor, tente novamente.');
     } finally {
       setIsLoading(false);
       setLoadingMessage('');

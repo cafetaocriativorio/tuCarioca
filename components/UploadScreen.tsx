@@ -26,7 +26,7 @@ export const UploadScreen: React.FC<UploadScreenProps> = ({ onImageUpload }) => 
         ImageCraft AI
       </h1>
       <p className="text-lg text-gray-400 mb-8 max-w-xl mx-auto">
-        Transform your images with the power of AI. From simple adjustments to complex object manipulation, bring your creative vision to life.
+        Transforme suas imagens com o poder da IA. De ajustes simples à manipulação complexa de objetos, dê vida à sua visão criativa.
       </p>
       <input
         type="file"
@@ -40,7 +40,7 @@ export const UploadScreen: React.FC<UploadScreenProps> = ({ onImageUpload }) => 
         className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 px-8 rounded-full inline-flex items-center space-x-3 transition-transform transform hover:scale-105 shadow-lg shadow-purple-500/30"
       >
         <UploadIcon className="w-6 h-6" />
-        <span>Upload Image</span>
+        <span>Carregar Imagem</span>
       </button>
     </div>
   );

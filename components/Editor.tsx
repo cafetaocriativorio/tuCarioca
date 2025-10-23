@@ -5,6 +5,7 @@ import { Toolbar } from './Toolbar';
 import { ToolPanel } from './ToolPanel';
 import { UndoIcon } from './icons/UndoIcon';
 import { ResetIcon } from './icons/ResetIcon';
+import { DownloadIcon } from './icons/DownloadIcon';
 
 interface EditorProps {
   image: string;
@@ -21,6 +22,15 @@ export const Editor: React.FC<EditorProps> = ({ image, onEdit, onUndo, onReset, 
     setActiveTool(tool === activeTool ? null : tool);
   };
 
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = image;
+    link.download = `ImageCraftAI_${Date.now()}.png`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="w-full h-screen flex flex-col bg-gray-900">
       <header className="flex-shrink-0 bg-gray-800/50 p-2 flex justify-between items-center z-20">
@@ -30,23 +40,30 @@ export const Editor: React.FC<EditorProps> = ({ image, onEdit, onUndo, onReset, 
                 onClick={onUndo} 
                 disabled={!canUndo}
                 className="p-2 rounded-full bg-gray-700 hover:bg-purple-600 disabled:bg-gray-800 disabled:text-gray-500 disabled:cursor-not-allowed transition-colors"
-                title="Undo"
+                title="Desfazer"
             >
                 <UndoIcon className="w-5 h-5" />
             </button>
             <button 
                 onClick={onReset}
                 className="p-2 rounded-full bg-gray-700 hover:bg-purple-600 transition-colors"
-                title="Reset to Original"
+                title="Restaurar Original"
             >
                 <ResetIcon className="w-5 h-5" />
+            </button>
+            <button 
+                onClick={handleDownload}
+                className="p-2 rounded-full bg-green-600 hover:bg-green-700 transition-colors"
+                title="Baixar Imagem"
+            >
+                <DownloadIcon className="w-5 h-5" />
             </button>
         </div>
       </header>
 
       <main className="flex-grow flex items-center justify-center p-4 overflow-hidden">
         <div className="relative w-full h-full flex items-center justify-center">
-            <img src={image} alt="Editable content" className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"/>
+            <img src={image} alt="Conteúdo editável" className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"/>
         </div>
       </main>
 

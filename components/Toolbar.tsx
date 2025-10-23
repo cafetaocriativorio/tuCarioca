@@ -15,12 +15,12 @@ interface ToolbarProps {
 }
 
 const tools: ToolDefinition[] = [
-  { id: 'presets', name: 'Presets', icon: PresetsIcon },
-  { id: 'editObject', name: 'Objects', icon: EditObjectIcon },
-  { id: 'facialMood', name: 'Faces', icon: FaceIcon },
-  { id: 'background', name: 'Background', icon: BackgroundIcon },
-  { id: 'upscale', name: 'Upscale', icon: UpscaleIcon },
-  { id: 'prompt', name: 'Prompt', icon: PromptIcon },
+  { id: 'presets', name: 'Filtros', icon: PresetsIcon },
+  { id: 'editObject', name: 'Objetos', icon: EditObjectIcon },
+  { id: 'facialMood', name: 'Rostos', icon: FaceIcon },
+  { id: 'background', name: 'Fundo', icon: BackgroundIcon },
+  { id: 'upscale', name: 'Ampliar', icon: UpscaleIcon },
+  { id: 'prompt', name: 'Comando', icon: PromptIcon },
 ];
 
 export const Toolbar: React.FC<ToolbarProps> = ({ activeTool, onSelectTool }) => {
